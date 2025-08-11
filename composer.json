@@ -1,0 +1,15 @@
+{
+    "name": "jamesdoyle/swipe-poker",
+    "autoload": {
+        "psr-4": {
+            "Jamesdoyle\\SwipePoker\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "James Doyle",
+            "email": "james2doyle@gmail.com"
+        }
+    ],
+    "require": {}
+}
