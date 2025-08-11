@@ -24,13 +24,16 @@ document.addEventListener("alpine:init", () => {
 		init() {
 			// First, load base card data and initialize game to default state.
 			// This ensures 'allCards' is populated before attempting to load from URL.
-			this.loadCardsAndInit().then(() => {
+			this.loadCardsAndInit()
+				// waiting for nextTick fixes the possible race condition with loading the initial state or the url state
+				.then(() => Alpine.nextTick())
 				// After cards are loaded and game is initialized to its default,
 				// attempt to load state from the URL. This will override default state if present.
-				this.loadStateFromUrl();
-				// Ensure the URL reflects the current state (either default or loaded from URL).
-				this.saveStateToUrl();
-			});
+				.then(() => this.loadStateFromUrl())
+				.then(() => {
+					// Ensure the URL reflects the current state (either default or loaded from URL).
+					this.saveStateToUrl();
+				});
 		},
 
 		/**
@@ -161,14 +164,14 @@ document.addEventListener("alpine:init", () => {
 		/**
 		 * Loads game state from the URL query parameters.
 		 */
-		loadStateFromUrl() {
+		async loadStateFromUrl() {
 			const urlParams = new URLSearchParams(window.location.search);
 			const encodedState = urlParams.get(this.urlStateKey);
 			if (encodedState) {
-				this.decodeGameState(encodedState);
-			} else {
-				// If no state in URL, the game remains in its default 'initGame' state, which is correct.
+				return Promise.resolve(this.decodeGameState(encodedState));
 			}
+			// If no state in URL, the game remains in its default 'initGame' state, which is correct.
+			return Promise.resolve(null);
 		},
 
 		/**
@@ -182,7 +185,7 @@ document.addEventListener("alpine:init", () => {
 					throw new Error(`HTTP error! status: ${response.status}`);
 				}
 				const data = await response.json();
-				this.allCards = data.map((card, index) => ({
+				this.allCards = data.map((card) => ({
 					...card,
 					currentRank: 0, // Rank accumulating within rounds
 					finalRank: -1, // Final rank assigned when a card is 'swiped left' or at game end
