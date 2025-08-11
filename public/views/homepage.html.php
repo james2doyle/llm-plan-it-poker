@@ -45,7 +45,7 @@
                         <span class="text-gray-200" x-text="card.name[1]"></span>
                     </div>
                     <div class="card-image-container">
-                        <img :src="`images/${card.name[0]}.jpeg`" :alt="card.image_description" class="card-image" onerror="this.onerror=null; this.src='https://placehold.co/350x180/4a5568/e2e8f0?text=Image+Not+Found';" loading="lazy">
+                        <img :src="`images/${card.name[0]}.jpeg`" :alt="card.image_description" class="card-image" onerror="this.onerror=null; this.src='https://placehold.co/350x180/4a5568/e2e8f0?text=Image+Not+Found';" loading="lazy" fetchpriority="low">
                     </div>
                     <div class="card-type-line" x-text="`${card.card_type} — ${card.card_subtypes.join(' ')}`"></div>
                     <div class="card-text-box">
