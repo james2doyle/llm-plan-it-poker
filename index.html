@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <div id="game-container" class="game-container" x-data="gameData" x-init="loadCardsAndInit()">
+    <div id="game-container" class="game-container" x-data="gameData" x-init="loadCardsAndInit()" @keydown.left.window="handleKeyDown('ArrowLeft')" @keydown.right.window="handleKeyDown('ArrowRight')">
         <!-- Displays current round and card info -->
         <div x-cloak id="current-info" class="current-info" :class="{'hidden': showEndScreen}">
             <h3 class="text-lg" x-text="`Round ${roundNumber}`"></h3>

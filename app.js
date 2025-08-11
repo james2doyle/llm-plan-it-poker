@@ -423,5 +423,23 @@ document.addEventListener("alpine:init", () => {
 			this.showEndScreen = true;
 			this.saveStateToUrl(); // Save state after game ends
 		},
+
+		/**
+		 * Handles keyboard events for left and right arrow keys.
+		 * @param {Event} key - The keyboard event.
+		 */
+		handleKeyDown(key) {
+			if (key === "ArrowLeft") {
+				this.handleCardSwipe(
+					this.currentRoundCards[this.currentCardIndex],
+					"left",
+				);
+			} else if (key === "ArrowRight") {
+				this.handleCardSwipe(
+					this.currentRoundCards[this.currentCardIndex],
+					"right",
+				);
+			}
+		},
 	}));
 });
