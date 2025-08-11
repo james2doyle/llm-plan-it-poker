@@ -1,114 +1,379 @@
 [
-	{
-		"id": "9d4c800f",
-		"name": ["Serpent of Shifting Scales", "Dynamic Pricing Algorithm"],
-		"estimated_impact_to_project": "High",
-		"estimated_t_shirt_size_to_build": "M",
-		"mana_cost": ["U", "B"],
-		"image_description": "A cybernetic serpent with scales displaying real-time price fluctuations",
-		"card_type": "Creature",
-		"card_subtypes": ["Beast", "AI"],
-		"card_text": "Whenever market conditions change, adjust product pricing. Scry 1 after each pricing shift",
-		"flavor_text": "Gold is never static - neither are my calculations!",
-		"power_defense": [2, 4],
-		"image_url": "https://delivery-us1.bfl.ai/results/b2/603118cd1030f5/cd1030f5ec064e4d8cfc869ca52373d9/sample.png?se=2025-08-11T18%3A50%3A04Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=8/jeNBtzhzaeDSHRi1nYCXoHB8Tx1I1rAGeMeEbIB7I%3D"
-	},
-	{
-		"id": "707bb90e",
-		"name": ["Spectral Showroom Owl", "AR Product Preview"],
-		"estimated_impact_to_project": "Medium",
-		"estimated_t_shirt_size_to_build": "L",
-		"mana_cost": ["W", "U"],
-		"image_description": "A translucent owl projecting holographic product visualizations",
-		"card_type": "Enchantment Creature",
-		"card_subtypes": ["Spirit", "Illusion"],
-		"card_text": "Tap: Create a 3D illusionary projection of target product in the user's environment",
-		"flavor_text": "See beyond the veil of space and time!",
-		"power_defense": [1, 3],
-		"image_url": "https://delivery-us1.bfl.ai/results/89/6089835df56b85/5df56b853f9b4f74b9d4f4620e936e7f/sample.png?se=2025-08-11T18%3A50%3A10Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=3rwESqfVvN9ft/GLhZ%2B8dJm01yfZ0mjkOz4NwTUlzU4%3D"
-	},
-	{
-		"id": "232bbffd",
-		"name": ["Goblin Cart Retriever", "Abandoned Cart Recovery"],
-		"estimated_impact_to_project": "Medium",
-		"estimated_t_shirt_size_to_build": "M",
-		"mana_cost": ["R"],
-		"image_description": "A wiry goblin dragging overflowing shopping carts through digital portals",
-		"card_type": "Creature",
-		"card_subtypes": ["Goblin", "Rogue"],
-		"card_text": "Haste. When this enters battlefield, return target abandoned cart to its owner's hand",
-		"flavor_text": "Oy! You forgot your treasures!",
-		"power_defense": [3, 1],
-		"image_url": "https://delivery-us1.bfl.ai/results/1a/6152099e0a037e/9e0a037ea17144b4b87c48553a93cea3/sample.png?se=2025-08-11T18%3A50%3A16Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=e6vI1xsMsJBx0dmhoaVSOtpYHDiLic8l/sBAB1NFtnM%3D"
-	},
-	{
-		"id": "63234497",
-		"name": ["Fae Review Harvester", "User-Generated Content Curation"],
-		"estimated_impact_to_project": "High",
-		"estimated_t_shirt_size_to_build": "L",
-		"mana_cost": ["G", "W"],
-		"image_description": "A tiny winged fae carrying scrolls of customer reviews and photos",
-		"card_type": "Creature",
-		"card_subtypes": ["Faerie", "Advisor"],
-		"card_text": "Flying. Whenever a customer leaves a review, create a 1/1 Photo Evidence token",
-		"flavor_text": "Your words become my magic!",
-		"power_defense": [1, 4],
-		"image_url": "https://delivery-us1.bfl.ai/results/9e/621921e35fbfd9/e35fbfd92b7141e685e4b4799fbb0f05/sample.png?se=2025-08-11T18%3A50%3A23Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=aJgPjgj8wxFIUM0RMhMc%2BO2czqt/0R%2BJ%2BnbuRpRZp/Y%3D"
-	},
-	{
-		"id": "c504691c",
-		"name": ["Lightning-Flash Vendor", "Flash Sale System"],
-		"estimated_impact_to_project": "High",
-		"estimated_t_shirt_size_to_build": "M",
-		"mana_cost": ["R", "R"],
-		"image_description": "A crackling humanoid stormcloud holding an hourglass filled with lightning",
-		"card_type": "Sorcery",
-		"card_subtypes": ["Instant"],
-		"card_text": "Create X temporary duplicate product listings at X-1% cost where X is your devotion to red",
-		"flavor_text": "Quick before it disappears!",
-		"power_defense": [5, 0],
-		"image_url": "https://delivery-us1.bfl.ai/results/a1/626845feda09d8/feda09d805554dffba894459bbba04cb/sample.png?se=2025-08-11T18%3A50%3A28Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=h5UqmzwF0LmxVdtQNufdXYf1MMGISo9jo0bt1Xuozok%3D"
-	},
-	{
-		"id": "71e0dc20",
-		"name": ["Crossell Chimera", "Intelligent Product Bundling"],
-		"estimated_impact_to_project": "Medium",
-		"estimated_t_shirt_size_to_build": "L",
-		"mana_cost": ["G", "U"],
-		"image_description": "A three-headed beast combining unrelated items into perfect packages",
-		"card_type": "Creature",
-		"card_subtypes": ["Chimera"],
-		"card_text": "When this enters battlefield, reveal cards from top of library until you reveal three artifacts. Put them into play tapped",
-		"flavor_text": "You need this... and this... and especially THIS!",
-		"power_defense": [4, 4],
-		"image_url": "https://delivery-us1.bfl.ai/results/34/6324647b4660fc/7b4660fc5a47437aaeac53bc607def46/sample.png?se=2025-08-11T18%3A50%3A33Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=GZEIeL9emmsgDAlCMtQ7kKAXhES5nYRBQ1lvoH9f0RA%3D"
-	},
-	{
-		"id": "fb74c453",
-		"name": ["Stockwatch Phoenix", "Back-in-Stock Alerts"],
-		"estimated_impact_to_project": "Low",
-		"estimated_t_shirt_size_to_build": "S",
-		"mana_cost": ["R", "W"],
-		"image_description": "A flaming bird circling high above warehouse inventory racks",
-		"card_type": "Creature",
-		"card_subtypes": ["Phoenix"],
-		"card_text": "Flying, vigilance. When monitored product becomes available, return Stockwatch Phoenix from graveyard to hand",
-		"flavor_text": "From ashes rises opportunity!",
-		"power_defense": [2, 2],
-		"image_url": "https://delivery-us1.bfl.ai/results/56/6380310b868d91/0b868d91003d4882a954ca9bd672f356/sample.png?se=2025-08-11T18%3A50%3A39Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=ktozYPv%2BO/WlAlFLFMHNhRNZ%2B9Pwk%2B5lICsDQ/V4/Xs%3D"
-	},
-	{
-		"id": "f3b6a037",
-		"name": ["Loyalty Hoard Dragon", "Reward Program System"],
-		"estimated_impact_to_project": "High",
-		"estimated_t_shirt_size_to_build": "L",
-		"mana_cost": ["W", "B", "R"],
-		"image_description": "A massive dragon sleeping on a mountain of loyalty point tokens",
-		"card_type": "Legendary Creature",
-		"card_subtypes": ["Dragon"],
-		"card_text": "Flying. Whenever a customer makes a purchase, put a +1/+1 counter on Loyalty Hoard Dragon. Remove 3 counters: Draw a card",
-		"flavor_text": "My treasures grow with your devotion",
-		"power_defense": [6, 6],
-		"image_url": "https://delivery-us1.bfl.ai/results/ef/6447544acfacca/4acfacca34d24223949d4b11c8726d5a/sample.png?se=2025-08-11T18%3A50%3A46Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=6nqSCBrX2JqwkGrLK1Lk6v9DFMJMp0n%2BxX3sHbMm%2BTQ%3D"
-	}
+  {
+    "name": [
+      "Cart Phantasm",
+      "(Abandoned Cart Reclamation)"
+    ],
+    "estimated_impact_to_project": "High",
+    "estimated_t_shirt_size_to_build": "M",
+    "mana_cost": [
+      "B",
+      "U"
+    ],
+    "image_description": "A translucent wraith dragging spectral shopping carts through digital ether",
+    "card_type": "Enchantment Creature",
+    "card_subtypes": [
+      "Spirit",
+      "Merchant"
+    ],
+    "card_text": "Whenever a user abandons a cart, return it to play under your control on the next turn cycle",
+    "flavor_text": "Even ghosts remember what they almost bought",
+    "power_defense": [
+      2,
+      3
+    ],
+    "image_url": "https://delivery-eu4.bfl.ai/results/e9/7287974f57daac/4f57daac0c8c4d0aa2e2ecb5776c6be8/sample.png?se=2025-08-11T21%3A22%3A10Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=AoDSJl6XK4J14WihKzzrxWgf/PCqM65kmqytk1MoO%2BU%3D",
+    "id": "1e00c8cb"
+  },
+  {
+    "name": [
+      "Oracle of Flux",
+      "(Dynamic Pricing)"
+    ],
+    "estimated_impact_to_project": "Medium",
+    "estimated_t_shirt_size_to_build": "L",
+    "mana_cost": [
+      "U",
+      "R"
+    ],
+    "image_description": "A hooded figure surrounded by floating price tags that shift like living runes",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Wizard",
+      "Advisor"
+    ],
+    "card_text": "At the beginning of each upkeep, adjust prices based on opponents' market activity",
+    "flavor_text": "The numbers never lie - but they do dance",
+    "power_defense": [
+      1,
+      4
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/db/738085697bcbbf/697bcbbf097147268f561a30ce51978e/sample.png?se=2025-08-11T21%3A22%3A19Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=wLC04fEIPhTfrRjzm9rzC7dpjz6KICnxt4n35GMVc4Q%3D",
+    "id": "8e884389"
+  },
+  {
+    "name": [
+      "Hearthbound Sprite",
+      "(Social Proof Display)"
+    ],
+    "estimated_impact_to_project": "High",
+    "estimated_t_shirt_size_to_build": "S",
+    "mana_cost": [
+      "G",
+      "W"
+    ],
+    "image_description": "A glowing fairy imprinting recent purchase stamps on product pages",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Faerie",
+      "Bard"
+    ],
+    "card_text": "Whenever a product enters a cart, create 1/1 Customer Testimonial tokens",
+    "flavor_text": "See? Everyone's doing it!",
+    "power_defense": [
+      0,
+      5
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/77/74647177084bda/77084bdadd0d4e05a70446bcfb170e44/sample.png?se=2025-08-11T21%3A22%3A27Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=smfebMtIfqmDOK9BCAiYZMrcIQG/rGvlW7Rx%2BT0/6Ns%3D",
+    "id": "eba654e2"
+  },
+  {
+    "name": [
+      "Recurring Golem",
+      "(Subscription Service)"
+    ],
+    "estimated_impact_to_project": "Medium",
+    "estimated_t_shirt_size_to_build": "M",
+    "mana_cost": [
+      "B",
+      "W"
+    ],
+    "image_description": "A stone construct with calendar runes glowing across its body",
+    "card_type": "Artifact Creature",
+    "card_subtypes": [
+      "Golem"
+    ],
+    "card_text": "At the beginning of each month, create a Charge counter unless sacrificed",
+    "flavor_text": "The gift that keeps on taking",
+    "power_defense": [
+      3,
+      3
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/cb/75491509ce99b5/09ce99b5e4734307ba9586ad40f5f1a9/sample.png?se=2025-08-11T21%3A22%3A36Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=d6d4Hy7u9MLXc%2B5GDQ7g5o52Z5ACk4eZNaC6HfQEPQY%3D",
+    "id": "1cf4b1d5"
+  },
+  {
+    "name": [
+      "Loyalty Wyrm",
+      "(Rewards Program)"
+    ],
+    "estimated_impact_to_project": "High",
+    "estimated_t_shirt_size_to_build": "L",
+    "mana_cost": [
+      "R",
+      "W"
+    ],
+    "image_description": "A golden dragon hoarding piles of glowing loyalty coins",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Dragon"
+    ],
+    "card_text": "Whenever a customer completes a purchase, add +1/+1 counter for each previous purchase",
+    "flavor_text": "Tenth purchase gets you wings!",
+    "power_defense": [
+      4,
+      4
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/44/76333785c04d94/85c04d9499db444fb5966041312399de/sample.png?se=2025-08-11T21%3A22%3A44Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=DX3uRx5jCc7cDWour9HF7p0rbyY0LHfe2PmaKsH52Ew%3D",
+    "id": "a6a3e8eb"
+  },
+  {
+    "name": [
+      "Chimeric Upseller",
+      "(Cross-Sell System)"
+    ],
+    "estimated_impact_to_project": "Medium",
+    "estimated_t_shirt_size_to_build": "M",
+    "mana_cost": [
+      "U",
+      "G"
+    ],
+    "image_description": "A three-headed beast showing complementary products from different angles",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Chimera"
+    ],
+    "card_text": "When this enters battlefield, reveal the top 3 items from opponent's browsing history",
+    "flavor_text": "You might also want... your soul returned",
+    "power_defense": [
+      2,
+      2
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/c5/771615fef3902d/fef3902db28748d396f830550d6b9da9/sample.png?se=2025-08-11T21%3A22%3A52Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=EX8iCQuH66e9d2ae2pbiMjjwzVt5tw2kcADuXPwqA/Q%3D",
+    "id": "42ea2b83"
+  },
+  {
+    "name": [
+      "Content Elemental",
+      "(User-Generated Gallery)"
+    ],
+    "estimated_impact_to_project": "Low",
+    "estimated_t_shirt_size_to_build": "XL",
+    "mana_cost": [
+      "G",
+      "U"
+    ],
+    "image_description": "A swirling vortex of customer photos forming human-like features",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Elemental"
+    ],
+    "card_text": "Whenever a customer shares media, populate the battlefield with 1/1 Admirer tokens",
+    "flavor_text": "Behold! The crowd's collective imagination",
+    "power_defense": [
+      1,
+      5
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/63/7800479118aa36/9118aa36beb14fe8a7a3877f4458490c/sample.png?se=2025-08-11T21%3A23%3A01Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=xq93jkaB3a/TW8VZ1a037EO%2Bw9gxp0TmrUiDeEDDfy4%3D",
+    "id": "960c1ce6"
+  },
+  {
+    "name": [
+      "Flashfire Phoenix",
+      "(Limited-Time Sale)"
+    ],
+    "estimated_impact_to_project": "High",
+    "estimated_t_shirt_size_to_build": "S",
+    "mana_cost": [
+      "R"
+    ],
+    "image_description": "A blazing bird creating countdown timers from its falling feathers",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Phoenix"
+    ],
+    "card_text": "Sacrifice at end of turn: Return to hand with time counters equal to sale duration",
+    "flavor_text": "Hurry! These embers won't stay hot",
+    "power_defense": [
+      3,
+      1
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/e0/78844672e9b58e/72e9b58e8c6a419496ce9a224a032905/sample.png?se=2025-08-11T21%3A23%3A09Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=5jc0WdRsxJEuxRslcGgjZupUmBoyjzYA0FnNI05Ktns%3D",
+    "id": "2ac8f82f"
+  },
+  {
+    "name": [
+      "Stock Nymph",
+      "(Inventory Alerts)"
+    ],
+    "estimated_impact_to_project": "Medium",
+    "estimated_t_shirt_size_to_build": "M",
+    "mana_cost": [
+      "G",
+      "U"
+    ],
+    "image_description": "A woodland spirit tending digital shelves that bloom with availability",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Nymph"
+    ],
+    "card_text": "When a product you follow returns to stock, populate with 2 1/1 Bot tokens",
+    "flavor_text": "The trees whisper of restocking",
+    "power_defense": [
+      1,
+      3
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/30/79686214992fff/14992fff9490487b809ad01e28e1fc60/sample.png?se=2025-08-11T21%3A23%3A17Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=SGDFaC6BJsXEsyAO%2BzcEkZ%2BHnE9QWPoEnS5d/UrVP00%3D",
+    "id": "9dbdd9d1"
+  },
+  {
+    "name": [
+      "Wishlist Wisp",
+      "(Saved Items)"
+    ],
+    "estimated_impact_to_project": "Low",
+    "estimated_t_shirt_size_to_build": "XS",
+    "mana_cost": [
+      "W"
+    ],
+    "image_description": "A floating lantern containing ghostly product images",
+    "card_type": "Enchantment",
+    "card_subtypes": [
+      "Spirit"
+    ],
+    "card_text": "Players may exile up to 3 cards here. Any player may cast exiled cards",
+    "flavor_text": "Keep your dreams close",
+    "power_defense": [
+      0,
+      1
+    ],
+    "image_url": "https://delivery-eu4.bfl.ai/results/92/806318f22999ba/f22999ba7fa440b0ac7cb7555478dbad/sample.png?se=2025-08-11T21%3A23%3A27Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=65RbmeNdIrB9ljI4G8H8BKA3IGG7IPdU%2BuaY3ggy3gM%3D",
+    "id": "9d99117a"
+  },
+  {
+    "name": [
+      "Artificer of Forms",
+      "(Product Customization)"
+    ],
+    "estimated_impact_to_project": "High",
+    "estimated_t_shirt_size_to_build": "L",
+    "mana_cost": [
+      "U",
+      "R"
+    ],
+    "image_description": "A mad tinkerer surrounded by floating customization options",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Artificer"
+    ],
+    "card_text": "Pay X: Add X mod counters to target product. Each counter provides +1 benefit",
+    "flavor_text": "Make it yours... for a price",
+    "power_defense": [
+      2,
+      4
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/e0/8143527c36c11c/7c36c11ccb9e4611a3bf63c74eaaf492/sample.png?se=2025-08-11T21%3A23%3A35Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=yErtYC384zZPOVecun1pfEYOftpjkLdEFWTKmvmFAyo%3D",
+    "id": "d4a8b973"
+  },
+  {
+    "name": [
+      "Augury Specter",
+      "(AR Preview)"
+    ],
+    "estimated_impact_to_project": "Medium",
+    "estimated_t_shirt_size_to_build": "XL",
+    "mana_cost": [
+      "U",
+      "G"
+    ],
+    "image_description": "A ghostly merchant holding up intangible products in real space",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Specter"
+    ],
+    "card_text": "Illusion copies of artifacts you control appear in opponent's reality",
+    "flavor_text": "See it in your space... almost",
+    "power_defense": [
+      3,
+      2
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/1f/822734185f8924/185f8924f6b64054b05449f6efdaab1b/sample.png?se=2025-08-11T21%3A23%3A43Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=cVRQHypCss7ABQ3vHvuuYSiBHPwVHWxr1wLEhZt6WmU%3D",
+    "id": "ea3d99ae"
+  },
+  {
+    "name": [
+      "Sphinx of Suggestions",
+      "(AI Recommendations)"
+    ],
+    "estimated_impact_to_project": "High",
+    "estimated_t_shirt_size_to_build": "L",
+    "mana_cost": [
+      "W",
+      "U",
+      "B"
+    ],
+    "image_description": "A mystical being with eyes showing algorithmic patterns",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Sphinx"
+    ],
+    "card_text": "When a player searches their library, they must reveal cards based on browsing history",
+    "flavor_text": "We know what you desire before you do",
+    "power_defense": [
+      4,
+      4
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/c8/831204d3729f95/d3729f950b394bf3970d33919e944296/sample.png?se=2025-08-11T21%3A23%3A52Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=qovtJ7dqA7SA62HqLctvO95NsLqr4YlL1otdztU5hPk%3D",
+    "id": "423077da"
+  },
+  {
+    "name": [
+      "Greenwarden Dryad",
+      "(Eco-Certification)"
+    ],
+    "estimated_impact_to_project": "Low",
+    "estimated_t_shirt_size_to_build": "M",
+    "mana_cost": [
+      "G"
+    ],
+    "image_description": "A tree spirit examining products with magnifying leaves",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Dryad"
+    ],
+    "card_text": "Products with sustainability counters gain +2/+2 and hexproof",
+    "flavor_text": "Good for business, better for the forest",
+    "power_defense": [
+      1,
+      3
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/1f/8405327870e933/7870e933c33c457987f6daf1e7725307/sample.png?se=2025-08-11T21%3A24%3A01Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=5MxtW%2BhIO3kO03IZJDGEGoKC1ustJ6Cvgt0suwnb8c8%3D",
+    "id": "f9b4401d"
+  },
+  {
+    "name": [
+      "Bundle Troll",
+      "(Package Deals)"
+    ],
+    "estimated_impact_to_project": "Medium",
+    "estimated_t_shirt_size_to_build": "M",
+    "mana_cost": [
+      "R",
+      "G"
+    ],
+    "image_description": "A hulking creature tying items together with magical rope",
+    "card_type": "Creature",
+    "card_subtypes": [
+      "Troll",
+      "Merchant"
+    ],
+    "card_text": "When this attacks, defending player must pay or lose 1 random item from hand",
+    "flavor_text": "Buy two, get one guilt trip free!",
+    "power_defense": [
+      4,
+      2
+    ],
+    "image_url": "https://delivery-us1.bfl.ai/results/be/8491861c0f3c08/1c0f3c0824c84100bb9703e66c1cab7e/sample.png?se=2025-08-11T21%3A24%3A10Z&sp=r&sv=2024-11-04&sr=b&rsct=image/png&sig=Pn/Lud0nCQvWXvLqgh85eHC6HoBoYS7GSFWNV2RHOPk%3D",
+    "id": "954c3195"
+  }
 ]
