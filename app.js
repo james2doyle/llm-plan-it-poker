@@ -137,7 +137,7 @@ document.addEventListener("alpine:init", () => {
 					this.endGame();
 				}
 
-				console.log("Game state loaded from URL:", state);
+				// console.log("Game state loaded from URL:", state);
 			} catch (error) {
 				console.error("Failed to decode game state from URL:", error);
 				// If decoding fails, the game will remain in its default 'initGame' state.
@@ -158,7 +158,7 @@ document.addEventListener("alpine:init", () => {
 			}
 			// Use replaceState to avoid cluttering browser history with every state change
 			window.history.replaceState({}, "", url.toString());
-			console.log("Game state saved to URL:", encodedState);
+			// console.log("Game state saved to URL:", encodedState);
 		},
 
 		/**

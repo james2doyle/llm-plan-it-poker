@@ -48,8 +48,8 @@ body {
 	border-radius: 15px;
 	padding: 1rem;
 	width: 100%;
-	max-width: 370px; /* Card width */
-	height: 700px; /* Card height */
+	max-width: 400px;
+	height: 700px;
 	display: flex;
 	flex-direction: column;
 	position: absolute;
@@ -60,6 +60,11 @@ body {
 	cursor: grab;
 	user-select: none;
 	will-change: transform; /* Optimize for animation */
+}
+
+.magic-card:focus,
+.magic-card:active {
+	cursor: grabbing;
 }
 
 .card-header {
@@ -259,11 +264,6 @@ body {
 	background-color: #1a202c;
 	border-radius: 8px;
 	border: 1px solid #4a5568;
-}
-
-.ranked-list-item span {
-	font-size: 1.125rem;
-	color: #f7fafc;
 }
 
 .ranked-list-item strong {

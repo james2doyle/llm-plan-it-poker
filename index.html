@@ -71,11 +71,17 @@
         <div x-cloak id="end-screen" class="end-screen" :class="{'hidden': !showEndScreen}">
             <h2>Final Rankings</h2>
             <ul id="ranked-list" class="ranked-list">
-                <template x-for="card in sortedCards" :key="card.id">
+                <template x-for="(card, index) in sortedCards" :key="card.id">
                     <li class="ranked-list-item">
                         <div class="flex flex-col items-start">
-                            <span x-text="card.name[0]"></span>
-                            <small x-text="card.name[1]"></small>
+                            <span :class="{'font-bold': index === 0}" x-text="card.name[0]"></span>
+                            <small>
+                                <span x-text="card.name[1]"></span>
+                            </small>
+                            <small>
+                                Impact: <span x-text="card.estimated_impact_to_project"></span>,
+                                Size: <span x-text="card.estimated_t_shirt_size_to_build"></span>
+                            </small>
                         </div>
                         <strong x-text="`Rank: ${card.finalRank}`"></strong>
                     </li>
