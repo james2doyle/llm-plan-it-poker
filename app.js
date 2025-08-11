@@ -184,7 +184,6 @@ document.addEventListener("alpine:init", () => {
 				const data = await response.json();
 				this.allCards = data.map((card, index) => ({
 					...card,
-					id: `card-${index}`, // Assign a unique ID to each card
 					currentRank: 0, // Rank accumulating within rounds
 					finalRank: -1, // Final rank assigned when a card is 'swiped left' or at game end
 					swipedRightInRound: false, // Flag to determine if card proceeds to next round
