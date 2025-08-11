@@ -22,7 +22,7 @@ body {
 
 .game-container {
 	width: 100%;
-	max-width: 400px; /* Card width */
+	max-width: 500px; /* Card width */
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;

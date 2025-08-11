@@ -13,7 +13,11 @@
 <body>
     <div id="game-container" class="game-container" x-data="gameData" x-init="loadCardsAndInit()">
         <!-- Displays current round and card info -->
-        <div id="current-info" class="current-info" x-text="`Round ${roundNumber} | Cards Remaining: ${currentRoundCards.length - currentCardIndex}/${currentRoundCards.length} | Current Rank Value: +${roundNumber}`"></div>
+        <div id="current-info" class="current-info">
+            <h3 class="text-lg" x-text="`Round ${roundNumber}`"></h3>
+            <div x-text="`Cards Remaining: ${currentRoundCards.length - currentCardIndex}/${currentRoundCards.length}`"></div>
+            <div x-text="`Current Rank Value: +${roundNumber}`"></div>
+        </div>
 
         <!-- Area where cards are displayed and swiped -->
         <div id="card-stack" class="card-stack" :class="{'hidden': showEndScreen}">
@@ -66,7 +70,10 @@
             <ul id="ranked-list" class="ranked-list">
                 <template x-for="card in sortedCards" :key="card.id">
                     <li class="ranked-list-item">
-                        <span x-text="card.name[0]"></span>
+                        <div class="flex flex-col items-start">
+                            <span x-text="card.name[0]"></span>
+                            <small x-text="card.name[1]"></small>
+                        </div>
                         <strong x-text="`Rank: ${card.finalRank}`"></strong>
                     </li>
                 </template>

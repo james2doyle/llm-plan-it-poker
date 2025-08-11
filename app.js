@@ -75,7 +75,6 @@ document.addEventListener("alpine:init", () => {
 		 * @returns {string} HTML string for mana symbols.
 		 */
 		parseManaCost(manaCostArray) {
-			console.log(manaCostArray);
 			if (!manaCostArray || manaCostArray.length === 0) return "";
 			return manaCostArray
 				.map(
