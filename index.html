@@ -83,6 +83,8 @@
             </ul>
             <button id="restart-button" class="restart-button" @click="initGame()">Play Again</button>
         </div>
+
+        <button id="reset-button" class="reset-button" :class="{'hidden': showEndScreen}" @click="resetGame()">Reset Game</button>
     </div>
 
     <script src="/app.js"></script>

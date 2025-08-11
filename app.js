@@ -228,6 +228,14 @@ document.addEventListener("alpine:init", () => {
 		},
 
 		/**
+		 * Resets the game to the start.
+		 */
+		resetGame() {
+			this.initGame();
+			this.saveStateToUrl();
+		},
+
+		/**
 		 * Parses mana cost strings (e.g., "{2}{W}{U}") into HTML elements representing mana symbols.
 		 * @param {string[]} manaCostArray - An array containing the mana cost string.
 		 * @returns {string} HTML string for mana symbols.

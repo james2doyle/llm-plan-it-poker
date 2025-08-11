@@ -287,6 +287,15 @@ body {
 	background-color: #4299e1;
 }
 
+.reset-button {
+	margin: 1rem 0 0;
+}
+
+.reset-button:hover {
+	color: #fff;
+	text-decoration: underline;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 640px) {
 	.game-container {
