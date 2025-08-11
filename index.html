@@ -9,18 +9,21 @@
     <!-- Include Alpine.js from CDN with defer attribute -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
 </head>
 <body>
     <div id="game-container" class="game-container" x-data="gameData" x-init="loadCardsAndInit()">
         <!-- Displays current round and card info -->
-        <div id="current-info" class="current-info" :class="{'hidden': showEndScreen}">
+        <div x-cloak id="current-info" class="current-info" :class="{'hidden': showEndScreen}">
             <h3 class="text-lg" x-text="`Round ${roundNumber}`"></h3>
             <div x-text="`Cards Remaining: ${currentRoundCards.length - currentCardIndex}/${currentRoundCards.length}`"></div>
-            <div x-text="`Current Rank Value: +${roundNumber}`"></div>
+            <!-- <div x-text="`Current Rank Value: +${roundNumber}`"></div> -->
         </div>
 
         <!-- Area where cards are displayed and swiped -->
-        <div id="card-stack" class="card-stack" :class="{'hidden': showEndScreen}">
+        <div x-cloak id="card-stack" class="card-stack" :class="{'hidden': showEndScreen}">
             <!-- Loop through cards to display a stack effect -->
             <template x-for="(card, index) in currentRoundCards.slice(currentCardIndex)" :key="card.id">
                 <div class="magic-card"
@@ -65,7 +68,7 @@
         </div>
 
         <!-- End screen, hidden until the game finishes -->
-        <div id="end-screen" class="end-screen" :class="{'hidden': !showEndScreen}">
+        <div x-cloak id="end-screen" class="end-screen" :class="{'hidden': !showEndScreen}">
             <h2>Final Rankings</h2>
             <ul id="ranked-list" class="ranked-list">
                 <template x-for="card in sortedCards" :key="card.id">

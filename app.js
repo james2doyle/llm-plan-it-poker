@@ -14,13 +14,170 @@ document.addEventListener("alpine:init", () => {
 		swipeThreshold: 80, // Minimum pixels to drag to register a swipe
 		rotationFactor: 0.05, // Factor to apply rotation based on horizontal drag
 
+		// New property for URL state management
+		urlStateKey: "gameState", // Key for the URL query parameter
+
+		/**
+		 * Alpine.js init method. Called when the component is initialized.
+		 * Handles initial card loading and state restoration from URL.
+		 */
+		init() {
+			// First, load base card data and initialize game to default state.
+			// This ensures 'allCards' is populated before attempting to load from URL.
+			this.loadCardsAndInit().then(() => {
+				// After cards are loaded and game is initialized to its default,
+				// attempt to load state from the URL. This will override default state if present.
+				this.loadStateFromUrl();
+				// Ensure the URL reflects the current state (either default or loaded from URL).
+				this.saveStateToUrl();
+			});
+		},
+
+		/**
+		 * Encodes the current game state into a URL-safe string.
+		 * Only persists essential game state, not UI-specific properties.
+		 * @returns {string} The encoded game state string.
+		 */
+		encodeGameState() {
+			const stateToPersist = {
+				cards: this.allCards.map((card) => ({
+					id: card.id,
+					cr: card.currentRank, // cr for currentRank
+					fr: card.finalRank, // fr for finalRank
+				})),
+				cIdx: this.currentCardIndex, // cIdx for currentCardIndex
+				rNum: this.roundNumber, // rNum for roundNumber
+				eScr: this.showEndScreen, // eScr for showEndScreen
+			};
+
+			try {
+				const jsonString = JSON.stringify(stateToPersist);
+				// Base64 encode to handle special characters and make it more compact
+				const base64Encoded = btoa(jsonString);
+				// URL encode to ensure it's safe for query parameters
+				return encodeURIComponent(base64Encoded);
+			} catch (error) {
+				console.error("Failed to encode game state:", error);
+				return "";
+			}
+		},
+
+		/**
+		 * Decodes game state from a URL-safe string and applies it to the component.
+		 * @param {string} encodedState - The encoded game state string from the URL.
+		 */
+		decodeGameState(encodedState) {
+			try {
+				const decodedUri = decodeURIComponent(encodedState);
+				const base64Decoded = atob(decodedUri);
+				const state = JSON.parse(base64Decoded);
+
+				// Apply loaded state to allCards
+				if (Array.isArray(state.cards)) {
+					// Iterate over the current 'allCards' and update their ranks based on persisted state
+					this.allCards = this.allCards.map((originalCard) => {
+						const persistedCard = state.cards.find(
+							(pc) => pc.id === originalCard.id,
+						);
+						if (persistedCard) {
+							return {
+								...originalCard,
+								currentRank:
+									persistedCard.cr !== undefined
+										? persistedCard.cr
+										: originalCard.currentRank,
+								finalRank:
+									persistedCard.fr !== undefined
+										? persistedCard.fr
+										: originalCard.finalRank,
+								// Reset transient UI states, they are not persisted
+								transformStyle: "translateX(0) rotate(0deg)",
+								opacityStyle: 1,
+								overlayOpacity: 0,
+								leftIndicatorOpacity: 0,
+								rightIndicatorOpacity: 0,
+								swipedRightInRound: false, // This flag is per-round and not persisted
+							};
+						}
+						return originalCard; // Return original if no persisted state found (shouldn't happen with proper IDs)
+					});
+				}
+
+				// Apply other state variables
+				this.currentCardIndex = state.cIdx !== undefined ? state.cIdx : 0;
+				this.roundNumber = state.rNum !== undefined ? state.rNum : 1;
+				this.showEndScreen = state.eScr !== undefined ? state.eScr : false;
+
+				// Reconstruct currentRoundCards based on the loaded 'allCards'
+				// Only cards with finalRank === -1 are still in play
+				this.currentRoundCards = this.allCards.filter(
+					(card) => card.finalRank === -1,
+				);
+
+				// Adjust currentCardIndex if it's out of bounds for the reconstructed currentRoundCards
+				if (
+					this.currentCardIndex >= this.currentRoundCards.length &&
+					this.currentRoundCards.length > 0
+				) {
+					this.currentCardIndex = 0; // Reset to first card if index is invalid
+				} else if (this.currentRoundCards.length === 0) {
+					this.currentCardIndex = 0; // No cards to display
+				}
+
+				// If the game was saved in an 'end screen' state, ensure it's reflected correctly
+				if (this.showEndScreen && this.currentRoundCards.length > 0) {
+					// This is an inconsistent state if showEndScreen is true but there are still cards in play.
+					// Force end game to ensure sortedCards is populated and state is consistent.
+					this.endGame();
+				} else if (this.currentRoundCards.length === 0 && !this.showEndScreen) {
+					// If no cards are left but end screen isn't shown, force end game.
+					this.endGame();
+				}
+
+				console.log("Game state loaded from URL:", state);
+			} catch (error) {
+				console.error("Failed to decode game state from URL:", error);
+				// If decoding fails, the game will remain in its default 'initGame' state.
+			}
+		},
+
+		/**
+		 * Saves the current game state to the URL query parameters.
+		 * This method should be called after any state change that needs to be persisted.
+		 */
+		saveStateToUrl() {
+			const encodedState = this.encodeGameState();
+			const url = new URL(window.location.href);
+			if (encodedState) {
+				url.searchParams.set(this.urlStateKey, encodedState);
+			} else {
+				url.searchParams.delete(this.urlStateKey); // Remove parameter if state is empty/invalid
+			}
+			// Use replaceState to avoid cluttering browser history with every state change
+			window.history.replaceState({}, "", url.toString());
+			console.log("Game state saved to URL:", encodedState);
+		},
+
+		/**
+		 * Loads game state from the URL query parameters.
+		 */
+		loadStateFromUrl() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const encodedState = urlParams.get(this.urlStateKey);
+			if (encodedState) {
+				this.decodeGameState(encodedState);
+			} else {
+				// If no state in URL, the game remains in its default 'initGame' state, which is correct.
+			}
+		},
+
 		/**
 		 * Loads card data from a JSON file and then initializes the game.
 		 */
 		async loadCardsAndInit() {
 			try {
 				// Assuming cards.json is in the same directory as index.html
-				const response = await fetch("./cards.json");
+				const response = await fetch("/cards.json");
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
 				}
@@ -37,7 +194,7 @@ document.addEventListener("alpine:init", () => {
 					leftIndicatorOpacity: 0,
 					rightIndicatorOpacity: 0,
 				}));
-				this.initGame(); // Initialize the game once data is loaded
+				this.initGame(); // Initialize the game once data is loaded to its default state
 			} catch (error) {
 				console.error("Failed to load card data:", error);
 				// You might want to display a user-friendly error message here
@@ -50,6 +207,7 @@ document.addEventListener("alpine:init", () => {
 		 */
 		initGame() {
 			// Reset all card states for a fresh game, using the already loaded allCards
+			// This is the default state, which can be overridden by URL state later.
 			this.allCards = this.allCards.map((card) => ({
 				...card,
 				currentRank: 0,
@@ -160,6 +318,7 @@ document.addEventListener("alpine:init", () => {
 				card.opacityStyle = 1;
 			}
 			this.currentX = 0; // Reset currentX for next drag
+			// No need to save state here, handleCardSwipe will do it after timeout
 		},
 
 		/**
@@ -185,6 +344,8 @@ document.addEventListener("alpine:init", () => {
 				if (this.currentCardIndex >= this.currentRoundCards.length) {
 					this.startNextRound();
 				}
+				// Save state after the card has moved and index/round logic has potentially updated
+				this.saveStateToUrl();
 			}, 500); // Match this duration to the CSS transition duration
 		},
 
@@ -203,6 +364,7 @@ document.addEventListener("alpine:init", () => {
 					}
 				});
 				this.endGame();
+				// State will be saved by endGame
 				return;
 			}
 
@@ -216,6 +378,7 @@ document.addEventListener("alpine:init", () => {
 					}
 				});
 				this.endGame();
+				// State will be saved by endGame
 				return;
 			}
 
@@ -231,6 +394,7 @@ document.addEventListener("alpine:init", () => {
 				return card;
 			});
 			this.currentCardIndex = 0;
+			this.saveStateToUrl(); // Save state after round transition
 		},
 
 		/**
@@ -247,6 +411,7 @@ document.addEventListener("alpine:init", () => {
 				(a, b) => b.finalRank - a.finalRank,
 			);
 			this.showEndScreen = true;
+			this.saveStateToUrl(); // Save state after game ends
 		},
 	}));
 });
