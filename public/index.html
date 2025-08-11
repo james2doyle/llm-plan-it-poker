@@ -28,7 +28,7 @@
             <template x-for="(card, index) in currentRoundCards.slice(currentCardIndex)" :key="card.id">
                 <div class="magic-card"
                     :data-card-id="card.id"
-                    :style="{ 'z-index': currentRoundCards.length - index, 'top': `${index * 5}px`, 'left': `${index * 5}px`, 'transform': card.transformStyle, 'opacity': card.opacityStyle }"
+                    :style="{ 'z-index': currentRoundCards.length - index, 'top': `${index * 5}px`, 'left': `${index * 5}px`, 'transform': card.transformStyle, 'opacity': index === 0 ? card.opacityStyle : 1 - index / 7 }"
                     @mousedown="startDrag($event, card.id)"
                     @touchstart="startDrag($event, card.id)"
                     @mousemove="drag($event, card.id)"
