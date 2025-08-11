@@ -13,7 +13,7 @@
 <body>
     <div id="game-container" class="game-container" x-data="gameData" x-init="loadCardsAndInit()">
         <!-- Displays current round and card info -->
-        <div id="current-info" class="current-info">
+        <div id="current-info" class="current-info" :class="{'hidden': showEndScreen}">
             <h3 class="text-lg" x-text="`Round ${roundNumber}`"></h3>
             <div x-text="`Cards Remaining: ${currentRoundCards.length - currentCardIndex}/${currentRoundCards.length}`"></div>
             <div x-text="`Current Rank Value: +${roundNumber}`"></div>
@@ -39,7 +39,7 @@
                         <div class="mana-cost" x-html="parseManaCost(card.mana_cost)"></div>
                     </div>
                     <div class="card-header mb-2 text-sm italic font-normal">
-                        <span class="text-gray-400" x-text="card.name[1]"></span>
+                        <span class="text-gray-200" x-text="card.name[1]"></span>
                     </div>
                     <div class="card-image-container">
                         <img :src="`images/${card.name[0]}.jpeg`" :alt="card.image_description" class="card-image" onerror="this.onerror=null; this.src='https://placehold.co/350x180/4a5568/e2e8f0?text=Image+Not+Found';" loading="lazy">
