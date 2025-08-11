@@ -1,0 +1,338 @@
+/* Base styles for the body and game container */
+body {
+	font-family:
+		-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	background-color: #1a202c; /* Dark background */
+	color: #e2e8f0; /* Light text */
+	display: flex;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	overflow: hidden; /* Prevent scroll during swipe */
+	font-feature-settings: "lnum" 1;
+	font-variant-numeric: lining-nums;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+.game-container {
+	width: 100%;
+	max-width: 400px; /* Card width */
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+/* Card stack for visual layering */
+.card-stack {
+	position: relative;
+	width: 100%;
+	height: 550px; /* Card height */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 2rem;
+}
+
+/* Styling for an individual Magic-themed card */
+.magic-card {
+	background-color: #2d3748; /* Darker card background */
+	border: 4px solid #a0aec0; /* Grey border for MtG feel */
+	border-radius: 15px;
+	padding: 1rem;
+	width: 100%;
+	max-width: 370px; /* Card width */
+	height: 700px; /* Card height */
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+	transition:
+		transform 0.3s ease-out,
+		opacity 0.3s ease-out; /* Smooth transitions for swipe */
+	cursor: grab;
+	user-select: none;
+	will-change: transform; /* Optimize for animation */
+}
+
+.card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.5rem;
+	font-weight: bold;
+	font-size: 1.125rem; /* text-lg */
+}
+
+.card-name {
+	color: #f7fafc; /* White text */
+}
+
+/* Mana cost display */
+.mana-cost {
+	display: flex;
+	gap: 0.25rem;
+}
+
+.mana-symbol {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.75rem;
+	font-weight: bold;
+	color: black;
+	border: 1px solid black;
+}
+/* Specific mana symbol colors */
+.mana-W {
+	background-color: #f9f6e6;
+} /* White */
+.mana-U {
+	background-color: #a0d5ee;
+} /* Blue */
+.mana-B {
+	background-color: #6a6a6a;
+} /* Black */
+.mana-R {
+	background-color: #f08080;
+} /* Red */
+.mana-G {
+	background-color: #90ee90;
+} /* Green */
+.mana-C,
+.mana-T {
+	background-color: #d3d3d3;
+} /* Tap symbol, treat as colorless */
+
+/* Card image styling */
+.card-image-container {
+	width: 100%;
+	height: 300px;
+	background-color: #4a5568; /* Dark grey placeholder */
+	border: 2px solid #a0aec0;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+/* Card type line styling */
+.card-type-line {
+	font-style: italic;
+	margin-bottom: 0.5rem;
+	color: #cbd5e0;
+	font-size: 0.875rem; /* text-sm */
+}
+
+/* Text box for card rules and details */
+.card-text-box {
+	background-color: #1a202c; /* Inner dark background */
+	border: 2px solid #a0aec0;
+	border-radius: 8px;
+	padding: 0.75rem;
+	flex-grow: 1;
+	margin-bottom: 0.5rem;
+	font-size: 0.9rem;
+	line-height: 1.3;
+	overflow-y: auto; /* For long text */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.flavor-text {
+	font-style: italic;
+	text-align: center;
+	margin: 0.5rem 0;
+	font-size: 0.8rem;
+	color: #a0aec0;
+}
+
+/* Power/Defense display */
+.power-defense {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-weight: bold;
+	font-size: 1rem;
+	color: #f7fafc;
+	border: 2px solid #a0aec0;
+	border-radius: 8px;
+	padding: 0.25rem 0.5rem;
+	background-color: #1a202c;
+	align-self: flex-end; /* Align to bottom right */
+	margin-top: auto; /* Push to bottom */
+}
+
+/* Swipe visual indicators */
+.swipe-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	pointer-events: none; /* Allows clicks/touches to pass through unless actively swiping */
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.swipe-indicator {
+	padding: 1rem;
+	border-radius: 10px;
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: white;
+	opacity: 0.7;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.swipe-left-indicator {
+	background-color: rgba(220, 38, 38, 0.7); /* Red */
+}
+
+.swipe-right-indicator {
+	background-color: rgba(34, 197, 94, 0.7); /* Green */
+}
+
+/* Current game info display */
+.current-info {
+	font-size: 1.125rem;
+	font-weight: bold;
+	margin: 1rem 0;
+	text-align: center;
+	color: #a0aec0;
+}
+
+/* End game screen styling */
+.end-screen {
+	background-color: #2d3748;
+	border: 4px solid #a0aec0;
+	border-radius: 15px;
+	padding: 2rem;
+	width: 100%;
+	max-width: 600px;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+.end-screen h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	margin-bottom: 1.5rem;
+	color: #f7fafc;
+}
+
+.ranked-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ranked-list-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.75rem 1rem;
+	margin-bottom: 0.5rem;
+	background-color: #1a202c;
+	border-radius: 8px;
+	border: 1px solid #4a5568;
+}
+
+.ranked-list-item span {
+	font-size: 1.125rem;
+	color: #f7fafc;
+}
+
+.ranked-list-item strong {
+	color: #63b3ed; /* Blue for rank */
+}
+
+/* Restart button styling */
+.restart-button {
+	background-color: #63b3ed; /* Blue */
+	color: white;
+	padding: 0.75rem 1.5rem;
+	border-radius: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 2rem;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+	transition: background-color 0.2s ease-in-out;
+}
+
+.restart-button:hover {
+	background-color: #4299e1;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 640px) {
+	.game-container {
+		padding: 0.5rem;
+	}
+	.magic-card {
+		padding: 0.75rem;
+		height: 480px;
+	}
+	.card-stack {
+		height: 530px;
+	}
+	.card-header {
+		font-size: 1rem;
+	}
+	.mana-symbol {
+		width: 18px;
+		height: 18px;
+		font-size: 0.65rem;
+	}
+	.card-image-container {
+		height: 160px;
+	}
+	.card-type-line {
+		font-size: 0.8rem;
+	}
+	.card-text-box {
+		font-size: 0.85rem;
+		padding: 0.6rem;
+	}
+	.flavor-text {
+		font-size: 0.75rem;
+	}
+	.power-defense {
+		font-size: 1.1rem;
+	}
+	.swipe-indicator {
+		font-size: 1.2rem;
+		padding: 0.75rem;
+	}
+	.current-info {
+		font-size: 1rem;
+	}
+	.end-screen h2 {
+		font-size: 1.75rem;
+	}
+	.ranked-list-item span {
+		font-size: 1rem;
+	}
+}
