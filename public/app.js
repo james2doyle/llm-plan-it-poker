@@ -6,6 +6,7 @@ document.addEventListener("alpine:init", () => {
 		roundNumber: 1, // Tracks the current round, used to increment rank for 'right' swipes
 		showEndScreen: false, // Controls visibility of the end game screen
 		sortedCards: [], // Array to hold cards sorted by final rank for the end screen
+		showSplashScreen: true, // Controls visibility of the splash screen
 
 		// State for drag/swipe logic
 		isDragging: false,
@@ -22,6 +23,7 @@ document.addEventListener("alpine:init", () => {
 		 * Handles initial card loading and state restoration from URL.
 		 */
 		init() {
+			this.showSplashScreen = true;
 			// First, load base card data and initialize game to default state.
 			// This ensures 'allCards' is populated before attempting to load from URL.
 			this.loadCardsAndInit()
@@ -33,6 +35,7 @@ document.addEventListener("alpine:init", () => {
 				.then(() => {
 					// Ensure the URL reflects the current state (either default or loaded from URL).
 					this.saveStateToUrl();
+					setTimeout(() => { this.showSplashScreen = false }, 1000)
 				});
 		},
 

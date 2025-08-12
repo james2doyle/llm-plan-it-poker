@@ -14,7 +14,15 @@
     </style>
 </head>
 <body>
-    <div id="game-container" class="game-container" x-data="gameData" x-init="loadCardsAndInit()" @keydown.left.window="handleKeyDown('ArrowLeft')" @keydown.right.window="handleKeyDown('ArrowRight')">
+    <div id="game-container" class="game-container" x-data="gameData" @keydown.left.window="handleKeyDown('ArrowLeft')" @keydown.right.window="handleKeyDown('ArrowRight')">
+        <!-- Splash screen -->
+        <div class="fixed inset-0 flex items-center justify-center z-50 bg-black pointer-events-none transition-all duration-1000 ease" :class="{ 'opacity-100': showSplashScreen, 'opacity-0': !showSplashScreen }">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold">Welcome to Plan It Poker</h1>
+                <p class="text-lg mt-4">Get ready to rank your features!</p>
+            </div>
+        </div>
+
         <!-- Displays current round and card info -->
         <div x-cloak id="current-info" class="current-info" :class="{'hidden': showEndScreen}">
             <h3 class="text-lg" x-text="`Round ${roundNumber}`"></h3>
