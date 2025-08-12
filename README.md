@@ -6,8 +6,8 @@ Swipe-It-Poker
 ![n8n-flow](n8n-flow.png)
 
 ```sh
-# starts a php server in the public folder
-php -S localhost:3001 -t public
+# starts a php server in the docs folder
+php -S localhost:3001 -t docs
 ```
 
 ```sh
