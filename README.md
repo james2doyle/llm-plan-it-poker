@@ -1,7 +1,7 @@
 Swipe-It-Poker
 ==============
 
-![demo](demo.mp4)
+![demo](https://github.com/james2doyle/llm-plan-it-poker/raw/refs/heads/main/demo.mp4)
 
 ![n8n-flow](n8n-flow.png)
 
