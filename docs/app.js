@@ -183,7 +183,7 @@ document.addEventListener("alpine:init", () => {
 		async loadCardsAndInit() {
 			try {
 				// Assuming cards.json is in the same directory as index.html
-				const response = await fetch("/cards.json");
+				const response = await fetch("/llm-plan-it-poker/cards.json");
 				if (!response.ok) {
 					throw new Error(`HTTP error! status: ${response.status}`);
 				}
