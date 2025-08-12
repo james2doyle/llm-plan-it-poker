@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <!-- Include Alpine.js from CDN with defer attribute -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="/llm-plan-it-poker/style.css">
     <style>
         [x-cloak] { display: none !important; }
     </style>
@@ -53,7 +53,7 @@
                         <span class="text-gray-200" x-text="card.name[1]"></span>
                     </div>
                     <div class="card-image-container">
-                        <img :src="`images/${card.name[0]}.jpeg`" :alt="card.image_description" class="card-image" onerror="this.onerror=null; this.src='https://placehold.co/350x180/4a5568/e2e8f0?text=Image+Not+Found';" loading="lazy" fetchpriority="low">
+                        <img :src="`/llm-plan-it-poker/images/${card.name[0]}.jpeg`" :alt="card.image_description" class="card-image" onerror="this.onerror=null; this.src='https://placehold.co/350x180/4a5568/e2e8f0?text=Image+Not+Found';" loading="lazy" fetchpriority="low">
                     </div>
                     <div class="card-type-line" x-text="`${card.card_type} — ${card.card_subtypes.join(' ')}`"></div>
                     <div class="card-text-box">
@@ -101,6 +101,6 @@
         <button id="reset-button" class="reset-button" :class="{'hidden': showEndScreen}" @click="resetGame()">Reset Game</button>
     </div>
 
-    <script src="/app.js"></script>
+    <script src="/llm-plan-it-poker/app.js"></script>
 </body>
 </html>
